@@ -28,8 +28,8 @@ index 9b077d6..c9ee84c 100644
 ```
 
 TODO
-* Figure out how to load in 16-bit or 8-bit properly
-* Turn into a Git tool
-* Cleanup codebase
-* Add a grammar checker 
-* Fine-tune with all CommitGen data.
+- [x] Figure out how to load in 16-bit or 8-bit properly
+- [x] Turn into a Git tool
+- [] Cleanup codebase
+- [] Add a grammar checker 
+- [] Fine-tune with all CommitGen data.
