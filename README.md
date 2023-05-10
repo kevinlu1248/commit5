@@ -1,4 +1,4 @@
-# commit-t5
+# commit5
 Automatically generate commit messages locally. Currently using "SEBIS/code_trans_t5_small_commit_generation_transfer_learning_finetune", as it seems like the best quality for performance ratio (best T5-small model). Based on work of https://github.com/agemagician/CodeTrans, which uses data from https://github.com/epochx/commitgen.
 
 ONNX Runtime improves performance from 1.3s to 670ms per iteration, but the resulting model is bigger (1.7gb of three files vs 800mb in original). Model can be found at https://huggingface.co/kevinlu1248/ct-base-commits-onnx/. Tests were conducted on the following example.
