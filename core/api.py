@@ -1,6 +1,7 @@
 # fastapi app that generates a commit message based on a diff
 from fastapi import FastAPI
 from core.generator import CommitMessageGenerator
+from pydantic import BaseModel
 
 app = FastAPI()
 generator = CommitMessageGenerator()
@@ -9,6 +10,9 @@ generator = CommitMessageGenerator()
 def read_root():
     return "Hello, World! Please enter a diff to generate a commit message via POST."
 
+class CommitMessageGeneratorRequest(BaseModel):
+    diff: str
+
 @app.post("/")
-def generate_commit_message(diff: str):
-    return generator(diff)
+def generate_commit_message(request: CommitMessageGeneratorRequest):
+    return generator(request.diff)
