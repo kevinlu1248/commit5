@@ -9,8 +9,11 @@ class CommitMessageGenerator:
     models_folder = "models/ct-base-commits-fastt5-quantized"
 
     def __post_init__(self):
+        print("Loading model...")
         self.model = get_onnx_model(self.model_name, self.models_folder)
+        print("Loading tokenizer...")
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, max_length=512)
+        print("Done")
 
     def generate(self, diff):
         token = self.tokenizer(
