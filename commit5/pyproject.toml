@@ -1,0 +1,16 @@
+[project]
+name = "commit5"
+description = "Locally generate commit messages using CodeTrans and FastT5"
+version = "0.1.0"
+authors = [
+    { name = "Kevin Lu", email = "kevinlu1248@gmail.com" }
+]
+dependencies = [
+    "transformers"
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+commit5 = "app:app"

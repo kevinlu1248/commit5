@@ -1,4 +1,4 @@
-from core.generator import CommitMessageGenerator
+from commit5.core.generator import CommitMessageGenerator
 
 if __name__ == "__main__":
     diff = open("models/example.diff").read()

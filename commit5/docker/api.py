@@ -1,6 +1,6 @@
 # fastapi app that generates a commit message based on a diff
 from fastapi import FastAPI
-from core.generator import CommitMessageGenerator
+from generator import CommitMessageGenerator
 from pydantic import BaseModel
 
 app = FastAPI()
