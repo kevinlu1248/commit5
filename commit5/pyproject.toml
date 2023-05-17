@@ -1,8 +1,8 @@
 [project]
 name = "commit5"
 description = "Locally generate commit messages using CodeTrans and FastT5"
-readme = "../README.md"
-version = "0.1.0"
+readme = "README.md"
+version = "0.1.1"
 authors = [
     { name = "Kevin Lu", email = "kevinlu1248@gmail.com" }
 ]
