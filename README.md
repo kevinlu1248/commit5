@@ -18,12 +18,15 @@ index efbb2e7..d377ee4 100644
  var GH_PAGES_GLOB = [GH_PAGES_PATH + '*'];
 ```
 
+### Vision
+I think in general there's a huge space for locally running LM-based devtools. There's generally huge privacy concerns in corporations around productivity tools for dev which is the problem around adoptivity of tools like Copilot/Codeium/Tabnine in companies, and I think powerful LM's can be built smaller while laptops are becoming beefier. There's also an assortment of optimizations (distillation + ONNX + quantization + llama.cpp) for running LLM's on lower-power machines.
+
 ### Archive
 ONNX Runtime improves performance from 1.3s to 670ms per iteration, but the resulting model is bigger (1.7gb of three files vs 800mb in original). Model can be found at https://huggingface.co/kevinlu1248/ct-base-commits-onnx/. Tests were conducted on the following example.
 
 ### TODO
 - [x] Figure out how to load in 16-bit or 8-bit properly
 - [x] Turn into a Git tool
-- [ ] Cleanup codebase
+- [x] Cleanup codebase
 - [ ] Add a grammar checker 
 - [ ] Fine-tune with all CommitGen data.

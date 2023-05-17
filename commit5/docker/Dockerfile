@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 RUN python download_tokenizer.py
 EXPOSE 1729
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "1729"]
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "1729"]
