@@ -28,5 +28,7 @@ ONNX Runtime improves performance from 1.3s to 670ms per iteration, but the resu
 - [x] Figure out how to load in 16-bit or 8-bit properly
 - [x] Turn into a Git tool
 - [x] Cleanup codebase
+- [ ] Upload to pypa
+- [ ] Migrate to CodeTrans-small
 - [ ] Add a grammar checker 
-- [ ] Fine-tune with all CommitGen data.
+- [ ] Use CodeT5+

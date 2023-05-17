@@ -6,11 +6,16 @@ authors = [
     { name = "Kevin Lu", email = "kevinlu1248@gmail.com" }
 ]
 dependencies = [
-    "transformers"
+    "docker",
+    "typer",
+    "requests"
 ]
 
 [project.optional-dependencies]
-dev = []
+dev = ["pytest"]
+
+[tool.setuptools]
+py-modules = ["app"]
 
 [project.scripts]
 commit5 = "app:app"
