@@ -9,17 +9,19 @@ image_name = "kevinlu1248/commit5"
 @app.command()
 def install():
     "Pulls commit5 docker container"
-    client.pull(image_name)
+    client.images.pull(image_name)
 
 @app.command()
 def start():
     "Starts commit5 docker container in background"
-    client.run(image_name, expose_ports=["1729:1729"])
+    client.containers.run(image_name, expose_ports=["1729:1729"], detatch=True)
 
 @app.command()
 def stop():
     "Stops commit5 docker container in background"
-    client.stop(image_name)
+    # container = client.containers.get(image_name)
+    # container.stop
+    pass
 
 @app.command()
 def test():
@@ -34,8 +36,12 @@ def test():
 
 @app.command()
 def generate(diff: str):
-    message = requests.get("http://0.0.0.0:1729/", json={"diff": diff})
+    message = requests.post("http://0.0.0.0:1729/", json={"diff": diff}).text
     print(message)
+
+@app.command()
+def commit():
+    pass
 
 if __name__ == '__main__':
     app()
