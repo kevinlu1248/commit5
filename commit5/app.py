@@ -38,15 +38,16 @@ def test():
         print("Docker is running.")
 
 @app.command()
-def generate(diff: str):
+def generate(diff: str, do_print=True):
     message = requests.post("http://0.0.0.0:1729/", json={"diff": diff}).text
-    print(message)
+    if do_print:
+        print(message)
     return message
 
 @app.command()
 def commit():
-    diff = subprocess.run(["git", "diff"]).stdout.decode("utf-8")
-    message = generate(diff)
+    diff = subprocess.run(["git", "diff"], capture_output=True, text=True).stdout.replace("\ No newline at end of file", "")
+    message = generate(diff, do_print=False)
     subprocess.run(["git", "commit", "-m", message])
 
 if __name__ == '__main__':
