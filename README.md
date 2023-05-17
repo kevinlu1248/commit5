@@ -1,6 +1,32 @@
 # commit5
 Automatically generate commit messages locally using T5. Currently using "SEBIS/code_trans_t5_small_commit_generation_transfer_learning_finetune", as it seems like the best quality for performance ratio (best T5-base model). Based on work of https://github.com/agemagician/CodeTrans, which uses data from https://github.com/epochx/commitgen.
 
+### Installation and Usage
+Ensure you have docker installed. Then run:
+```sh
+pip install commit5
+commit5 download # Pulls the docker image
+commit5 start # Starts the docker container
+```
+
+Wait around 10 seconds for the image to spin up to load the model into memory. Then run
+```sh
+commit5 test
+```
+
+Then, to automatically commit:
+```sh
+commit5 commit
+```
+
+Alternatively, to only generate messages, run
+```sh
+commit5 generate <diff_string>
+```
+Where diff_string is the string of the diff.
+
+### Optimizations
+
 FastT5 reduced the file sizes from 900mb (torch file) to a total of only 200mb (3 ONNX models) and the memory footprint to only 90mb. Further, the execution speed dropped from 1.3s to 0.5s.
 
 ```diff
