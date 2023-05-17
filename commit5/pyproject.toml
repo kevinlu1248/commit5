@@ -1,6 +1,7 @@
 [project]
 name = "commit5"
 description = "Locally generate commit messages using CodeTrans and FastT5"
+readme = "../README.md"
 version = "0.1.0"
 authors = [
     { name = "Kevin Lu", email = "kevinlu1248@gmail.com" }
@@ -12,10 +13,21 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest"]
+dev = [
+    "pytest",
+    "flit",
+    "twine"
+]
 
 [tool.setuptools]
 py-modules = ["app"]
 
 [project.scripts]
 commit5 = "app:app"
+
+[build-system]
+requires = ["flit_core>=3.4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "app"
