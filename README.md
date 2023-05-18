@@ -9,7 +9,7 @@ commit5 download # Pulls the docker image
 commit5 start # Starts the docker container
 ```
 
-Wait around 10 seconds for the image to spin up to load the model into memory. Then run
+Wait around 15 seconds for the image to spin up to load the model into memory. Then run
 ```sh
 commit5 test
 ```
